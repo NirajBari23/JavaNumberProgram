@@ -1,0 +1,38 @@
+import java.util.Scanner;
+class AutomorphicNumber 
+{
+	public static void main(String[] args) 
+	{
+		Scanner sc=new Scanner(System.in);
+		System.out.println("enter a number");
+		int num = sc.nextInt(); //5
+		int count=0;
+		int sqr = num*num; //25
+		int temp = sqr;
+
+		for (int i=num;i>0 ; i/=10)
+		{
+          count++;
+		 
+		}
+			
+		int p=1;
+		for(int j=0;j<count;j++)    //1<1
+		{
+			p = p * 10;
+		}
+			
+		temp = temp%p;    //25%10
+
+		if (num==temp)
+		{
+			System.out.println("it is automorphic");
+		}
+		else
+		{
+			System.out.println("it is not automorphic");
+		}
+		System.out.println(temp);
+		System.out.println(count);
+	}
+}
